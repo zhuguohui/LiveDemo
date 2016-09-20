@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zgh.livedemo.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_video"
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+
+        <com.zgh.livedemo.view.MyVideoView
+            android:id="@+id/vitamio_videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.zgh.livedemo.view.BarrageView
+            android:id="@+id/containerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <io.vov.vitamio.widget.MediaController
+            android:id="@+id/mediacontroller"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="#ff0000">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/mediacontroller_play_pause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/mediacontroller_button"
+                    android:contentDescription="@string/mediacontroller_play_pause"
+                    android:src="@drawable/mediacontroller_pause" />
+            </RelativeLayout>
+        </io.vov.vitamio.widget.MediaController>
+
+        <Button
+            android:id="@+id/btn_fullscreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:text="全屏切换" />
+
+        <LinearLayout
+            android:id="@+id/layout_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <TextView
+                android:id="@+id/tv_present"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="正在缓冲..."
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_room"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/et_send"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:hint="我也说两句"
+        android:imeOptions="actionSend" />
+
+</LinearLayout>
